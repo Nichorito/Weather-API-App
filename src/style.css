@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-image: url('./Background.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+#fade {
+    background-color: black;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+#leftFlex{
+    padding-left: 5%;
+    padding-top: 5%;
+    font-size: 2em;
+}
