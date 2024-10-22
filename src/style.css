@@ -18,6 +18,13 @@ body {
     display: flex;
 }
 
+.header{
+    width: 100%; /* Set to desired width */
+
+    font-size: 2vw; /* Adjust this value as needed */
+    text-align: center;
+}
+
 #fade {
     background: linear-gradient(to right, #00c6ff, #0072ff);
     position: absolute;
@@ -92,6 +99,10 @@ h2 {
     box-shadow: 0 0 20px 15px rgba(117, 99, 184, 0.5);
 }
 
+.topcontent{
+    margin-top: 2%;
+}
+
 #current-info{
     background-color: #3a6a9291;
     width: 30%;
@@ -142,7 +153,7 @@ h2 {
     text-align: center;
 }
 
-#feels-like{
+.subtext{
     width: 100%; /* Set to desired width */
     max-width: 300px; /* Max width for the container */
     font-size: 1vw; /* Adjust this value as needed */
