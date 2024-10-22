@@ -1,30 +1,245 @@
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
 }
 
 body {
-    background-image: url('./Background.jpg');
+    background-image: url('./Sky2.jpg');
     background-size: cover; /* Ensures the image covers the entire background */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     height: 100vh;
     overflow-y: hidden;
+    display: flex;
 }
 
 #fade {
-    background-color: black;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
     position: absolute;
     width: 100vw;
     height: 100vh;
-    opacity: 0.6;
+    opacity: 0.5;
     z-index: -1;
+    top: 0;
 }
 
-#leftFlex{
-    padding-left: 5%;
-    padding-top: 5%;
+input {
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+    font-size: .6em;
+    color: white;
+    border-radius: 10px;
+    border: 2px #01193663 solid;
+    background: rgba(117, 99, 184, 1);   
+    padding-left: 10px; 
+}
+input::placeholder{
+    color: white;
+    opacity: .7;
+}
+
+.big-container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(117, 99, 184, 0.418); /* Semi-transparent background */
+    width: fit-content;
+    height: 90%;
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 20px 20px;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.search-container {
     font-size: 2em;
+    align-items: start;
+    width: 30vw;
+    height: fit-content;
+}
+
+
+/*///////// RIGHT SIDE ///////////*/
+
+.right-container {
+    width: 60vw;
+    align-items: center;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+.content{
+    display: flex;
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 100%;
+    height: 20%;
+    flex-direction: row;
+    gap: 3%;
+}
+
+.blurred{
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px 15px rgba(117, 99, 184, 0.5);
+}
+
+#current-info{
+    background-color: #3a6a9291;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+   
+    border-radius: 1em;
+    align-items: center;
+    box-shadow: 0 0 20px 5px #3a6a9291;
+
+}
+
+#current-weather{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    justify-content: end;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+#current-weather>img{
+    width: 70%;
+}
+#current-weather>p{
+    margin-top: 5%;
+}
+
+
+
+#current-stats{
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    gap: 10%;
+    padding-right: 5%;
+}
+
+#conditions{
+    font-weight: bold;
+    font-size: 110%;
+    text-align: center;
+}
+
+#feels-like{
+    width: 100%; /* Set to desired width */
+    max-width: 300px; /* Max width for the container */
+    font-size: 1vw; /* Adjust this value as needed */
+    text-align: center;
+}
+
+
+#hourly{
+    background-color: #3a6a9291;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    backdrop-filter: blur(10px);
+    border-radius: 1em;
+    align-items: center;
+}
+
+.hourly-div{
+    width: 20%;
+    height: 100%;
+}
+
+#hour2{
+    background-color: rgba(38,88,133,.7);
+}
+#hour3{
+    background-color: rgba(34,82,125,.7);
+}
+#hour4{
+    background-color: rgba(26,72,116,.7);
+}
+#hour5{
+    background-color: rgba(23,67,109, .7);
+    border-radius: 0 1em 1em 0;
+}
+
+.observations{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1% 0;
+    width: 100%;
+    height: fit-content;
+}
+
+.observation-cell {
+    background-color: rgba(38,88,133,.7);
+    width: 15%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: .7em;
+}
+
+#forecast-header{
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.week-forecast{
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40%;
+    gap: 0;
+    background-color: #0072ff;
+    border-radius: 1em;
+}
+
+.weekly-div{
+    width: 20%;
+    height: 100%;
+}
+
+#day1{
+    background-color: #3a6a9291;
+    border-radius: 1em 0 0 1em;
+}
+
+#day2{
+    background-color: rgba(38,88,133,.7);
+}
+#day3{
+    background-color: rgba(34,82,125,.7);
+}
+#day4{
+    background-color: rgba(26,72,116,.7);
+}
+#day5{
+    background-color: rgba(23,67,109, .7);
+}
+#day6{
+    background-color: rgba(18,60,90, .7);
+}
+#day7{
+    background-color: rgba(10,50,80, .7);
+    border-radius: 0 1em 1em 0;
 }

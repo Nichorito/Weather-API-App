@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Tracker</title>
-    <link rel="stylesheet" type="text/css" href="style.css"> 
-<script defer src="main.bundle.js"></script></head>
+    <link rel="stylesheet" type="text/css" href="609a232ab53e413e38d2.css"> 
+    <script type="module" src="db10b957086623bcb4bd.js" defer></script>
+<script defer src="main.js"></script></head>
 <body>
-    
+    <div id="fade"></div>
+    <div class="search-container big-container blurred">
+        <h1>Welcome</h1>
+        <input type="text" placeholder="Enter location...">
+    </div>
+    <div class="big-container right-container blurred">
+        <h2>[city], [provice]</h2>
+        <div class="content">
+            <div id="current-info" class="blurred">
+                <div id="current-weather">
+                    <img src="00b46073347e5cea164c.png" alt="OOPs">
+                </div>
+                <div id="current-stats">
+                    <p id="clear">Clear</p>
+                    <p>Feels like:</p>
+                    <p>H:   L:</p>
+                </div>
+            </div>
+            <div id="hourly">
+                <div id="hour1" class="hourly-div"></div>
+                <div id="hour2" class="hourly-div"></div>
+                <div id="hour3" class="hourly-div"></div>
+                <div id="hour4" class="hourly-div"></div>
+                <div id="hour5" class="hourly-div"></div>
+            </div>
+        </div>
+        <div class="content observations">
+                <div id="sunrise" class="observation-cell">sunrise</div>
+                <div id="UV" class="observation-cell">UV</div>
+                <div id="wind" class="observation-cell">wind</div>
+                <div id="humidity" class="observation-cell">humidity</div>
+                <div id="visibility" class="observation-cell">visibility</div>
+                <div id="pressure" class="observation-cell">pressure</div>
+        </div>
+        <h2 id="forecast-header">7 Day Forecast</h2>
+        <div class="content week-forecast">
+            <div id="day1" class="weekly-div"></div>
+            <div id="day2" class="weekly-div"></div>
+            <div id="day3" class="weekly-div"></div>
+            <div id="day4" class="weekly-div"></div>
+            <div id="day5" class="weekly-div"></div>
+            <div id="day6" class="weekly-div"></div>
+            <div id="day7" class="weekly-div"></div>
+        </div>
+    </div>
 </body>
 </html>
