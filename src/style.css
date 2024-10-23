@@ -18,6 +18,18 @@ body {
     display: flex;
 }
 
+.hidden{
+    opacity: 0;
+    visibility: hidden !important;
+    transition: opacity 1s ease, visibility 0s 1s;
+}
+
+.visible{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease;
+}
+
 .header{
     width: 100%; /* Set to desired width */
 
@@ -69,6 +81,36 @@ input::placeholder{
     align-items: start;
     width: 30vw;
     height: fit-content;
+}
+
+#searchForm{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+}
+
+#searchForm>button {
+    color: rgb(255, 255, 255);
+    background:  rgba(38,88,133,.7);
+    width: 20%;
+    border-radius: 0.4em;
+    border: none;
+    transition: background .5s, border-radius .5s;
+}
+#searchForm>button:hover{
+    background: rgba(10,50,80, .7);
+    border-radius: .75em;
+}
+#searchForm > button:active { /* Styles for when the button is clicked */
+    background: rgba(5, 25, 40, 0.8); /* Darker background when clicked */
+    border-radius: 0.65em; /* Optional: change border-radius when clicked */
+    transform: translateY(1px); /* Move the button down */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+}
+
+#location-input{
+    width: 80%;
 }
 
 
