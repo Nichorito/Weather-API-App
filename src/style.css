@@ -56,7 +56,6 @@ body {
 #gifContainer{
     width: 100%;
     height: fit-content;
-    display: none;
 }
 
 input {
@@ -160,10 +159,11 @@ h2 {
 #current-info{
     background-color: #3a6a9291;
     width: 30%;
+    padding: 1%;
     height: 100%;
     display: flex;
     flex-direction: row;
-   
+    justify-content: space-between;
     border-radius: 1em;
     align-items: center;
     box-shadow: 0 0 20px 5px #3a6a9291;
@@ -173,16 +173,19 @@ h2 {
 #current-weather{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     justify-content: end;
     font-weight: bolder;
     font-size: 2rem;
+    text-align: center;
 }
 
 #current-weather>img{
-    width: 50%;
+    max-width: 50%;
+    max-width: 50%;
+    object-fit: contain;
 }
 #current-weather>p{
     margin-top: 5%;
@@ -196,11 +199,12 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 50%;
     gap: 10%;
+    
     padding-right: 5%;
     transition: opacity 3s linear;
-
+    justify-content: space-around;
 }
 
 #conditions{
@@ -234,10 +238,13 @@ h2 {
     height: 100%;
     display: flex;
     flex-grow: 1;
+    gap: 2%;
     flex-direction: column;
     padding: 3%;
+    padding-top: 1%;
     align-items: center;
     gap: 2%;
+    justify-content: space-between;
 }
 
 .hourly-div>p{

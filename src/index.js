@@ -31,18 +31,28 @@ async function getCurrentWeather() {
 
 //Hourly Functions
 const hourlyTemp = document.querySelectorAll('.hourlyTemp');
-const hourlyConditions = document.querySelectorAll('.hourlyConditions');
+const hourlyTime = document.querySelectorAll('.hourlyTime');
 let timeString;
+let k = 0;
 function getHourlyData(weatherData) {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 1; i < 6; i++) {
 
     //Convert 00:00:00 format to X AM/PM and display
     let currentHour = parseInt(weatherData.currentConditions.datetime.split(":")[0])
     timeString = convertTime(currentHour + i);
-    hourlyConditions[i].textContent = timeString
+    hourlyTime[i - 1].textContent = timeString
+    console.log(currentHour + i)
 
     //Display temperature 
-    hourlyTemp[i].textContent = convertToCelsius(weatherData.days[0].hours[currentHour + i + 1].temp) + "°";
+    if ((currentHour + i) > 23){
+      console.log("Clock has rolled over, it is now: " + weatherData.days[1].hours[0 + k] + "AM")
+      hourlyTemp[i - 1].textContent = convertToCelsius(weatherData.days[1].hours[0 + k].temp) + "°";
+      k++;
+    }
+    else{
+      console.log("using else for time: " + (currentHour + i))
+      hourlyTemp[i - 1].textContent = convertToCelsius(weatherData.days[0].hours[currentHour + i].temp) + "°";
+    }
   }
 }
 
@@ -54,9 +64,13 @@ function convertToCelsius(f) {
 function convertTime(currentHour) {
   let AmPm = "A.M."
   //subtract 12 hours to get time if pm
-  if (currentHour > 12) {
+  if (currentHour > 12 && currentHour <= 24) {
     AmPm = "P.M.";
     currentHour = currentHour - 12;
+  }
+  else if (currentHour > 24) {
+    AmPm = "A.M.";
+    currentHour = currentHour - 24;
   }
   return currentHour + " " + AmPm;
 }
