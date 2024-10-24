@@ -51,11 +51,14 @@ body {
     margin-top: 2%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 30vw;
 }
 
 #gifContainer{
-    width: 100%;
+    max-width: 100%;
     height: fit-content;
+    margin-bottom: 15%;
 }
 
 input {
@@ -128,7 +131,7 @@ input::placeholder{
 /*///////// RIGHT SIDE ///////////*/
 
 .right-container {
-    width: 60vw;
+    width: 65vw;
     align-items: center;
 }
 

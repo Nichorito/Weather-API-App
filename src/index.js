@@ -33,10 +33,9 @@ async function getCurrentWeather() {
 const hourlyTemp = document.querySelectorAll('.hourlyTemp');
 const hourlyTime = document.querySelectorAll('.hourlyTime');
 let timeString;
-let k = 0;
-function getHourlyData(weatherData) {
-  for (let i = 1; i < 6; i++) {
 
+function getHourlyData(weatherData) {
+  for (let i = 1, k=0; i < 6; i++) {
     //Convert 00:00:00 format to X AM/PM and display
     let currentHour = parseInt(weatherData.currentConditions.datetime.split(":")[0])
     timeString = convertTime(currentHour + i);
@@ -45,6 +44,7 @@ function getHourlyData(weatherData) {
 
     //Display temperature 
     if ((currentHour + i) > 23){
+      console.log(k)
       console.log("Clock has rolled over, it is now: " + weatherData.days[1].hours[0 + k] + "AM")
       hourlyTemp[i - 1].textContent = convertToCelsius(weatherData.days[1].hours[0 + k].temp) + "°";
       k++;
