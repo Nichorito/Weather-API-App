@@ -281,11 +281,14 @@ h2 {
     border-radius: 0 1em 1em 0;
 }
 
+/* ??????? OBSERVATIONS ????????? */
+
 .observations{
     margin-top: 2%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-grow: 1;
     padding: 1% 0;
     width: 100%;
     height: fit-content;
@@ -293,11 +296,38 @@ h2 {
 
 .observation-cell {
     background-color: rgba(38,88,133,.7);
-    width: 15%;
+    display: flex;
+    width: 13%;
     height: 100%;
     aspect-ratio: 1/1;
     border-radius: .7em;
+    flex-direction: column;
+    padding: 1%;
+    justify-content: space-around;
 }
+
+#sunrise>img {
+    width: 100%;
+}
+#visibility>img {
+    width: 80%;
+    align-self: center;
+}
+#humidity>img{
+    width: 40%;
+    align-self: center;
+}
+#pressure>img{
+    width: 80%;
+    align-self: center;
+}
+
+.observation-cell>p{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 #forecast-header{
     margin-top: auto;
