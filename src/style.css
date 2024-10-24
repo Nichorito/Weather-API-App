@@ -21,13 +21,12 @@ body {
 .hidden{
     opacity: 0;
     visibility: hidden !important;
-    transition: opacity 1s ease, visibility 0s 1s;
 }
 
 .visible{
     opacity: 1;
     visibility: visible;
-    transition: opacity 1s ease;
+    transition: opacity 2s ease;
 }
 
 .header{
@@ -177,7 +176,7 @@ h2 {
     border-radius: 1em;
     align-items: center;
     box-shadow: 0 0 20px 5px #3a6a9291;
-
+    transition: opacity 3s ease;
 }
 
 #current-weather{
@@ -267,18 +266,29 @@ h2 {
     width: 70%;
 }
 
+#hour1{
+    transition: opacity 1s linear;
+}
 #hour2{
+    transition-delay: 2s;
     background-color: rgba(38,88,133,.7);
+    transition: opacity 1s linear;
 }
 #hour3{
     background-color: rgba(34,82,125,.7);
+    transition-delay: 3s;
+    transition: opacity 1s linear;
 }
 #hour4{
     background-color: rgba(26,72,116,.7);
+    transition-delay: 4s;
+    transition: opacity 1s linear;
 }
 #hour5{
     background-color: rgba(23,67,109, .7);
     border-radius: 0 1em 1em 0;
+    transition-delay: 5s;
+    transition: opacity 1s linear;
 }
 
 /* ??????? OBSERVATIONS ????????? */
@@ -348,6 +358,11 @@ h2 {
 .weekly-div{
     width: 20%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 1%;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #day1{

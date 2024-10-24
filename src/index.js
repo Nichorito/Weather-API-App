@@ -27,6 +27,9 @@ async function getCurrentWeather() {
 
   //Get and display information for hourly div
   getHourlyData(weatherData);
+
+  //Get and display weekly data 
+  getWeeklyData(weatherData)
 }
 
 //Hourly Functions
@@ -56,8 +59,80 @@ function getHourlyData(weatherData) {
   }
 }
 
+function getWeeklyData(weatherData){
+  const dailyTemp = document.querySelectorAll('.dailyTemp')
+  const date = document.querySelectorAll('.date');
+  const dailyConditions = document.querySelectorAll('.dailyConditions')
+
+  for (let i = 1, k=0; i < 8; i++) {
+    console.log("day " + i)
+    let formattedDate = formatDate(weatherData.days[i].datetime)
+    date[i - 1].textContent = formattedDate;
+    dailyTemp[i - 1].textContent = convertToCelsius(weatherData.days[i].tempmax) + "°";
+
+
+/*
+    //Display temperature 
+    if ((currentHour + i) > 23){
+      console.log(k)
+      console.log("Clock has rolled over, it is now: " + weatherData.days[1].hours[0 + k] + "AM")
+      hourlyTemp[i - 1].textContent = convertToCelsius(weatherData.days[1].hours[0 + k].temp) + "°";
+      k++;
+    }
+    else{
+      console.log("using else for time: " + (currentHour + i))
+      hourlyTemp[i - 1].textContent = convertToCelsius(weatherData.days[0].hours[currentHour + i].temp) + "°";
+    }*/
+  }
+}
+
 function convertToCelsius(f) {
   return Math.round((f - 32) * (5 / 9));
+}
+
+function formatDate(date){
+  let dateArray = date.split("-");
+  let month = dateArray[1];
+  switch(month) {
+    case "1":
+      month = "Jan"
+      break;
+    case "2":
+      month = "Feb"
+      break;
+    case "3":
+      month = "Mar"
+      break;
+    case "4":
+      month = "Apr"
+      break;
+    case "5":
+      month = "May"
+      break;
+    case "6":
+      month = "Jun"
+      break;
+    case "7":
+      month = "Jul"
+      break;
+    case "8":
+      month = "Aug"
+      break;
+    case "9":
+      month = "Sept"
+      break;
+    case "10":
+      month = "Oct"
+      break;  
+    case "11":
+      month = "Nov"
+      break;
+    case "12":
+      month = "Dec"
+      break;
+  }
+  let day = dateArray[2];
+  return month + " " + day
 }
 
 //Convert time to AM or PM 
@@ -76,8 +151,17 @@ function convertTime(currentHour) {
 }
 
 
+//Button click
 window.storeInput = function storeInput() {
   console.log('Storing input')
+  Animations();
+
+  getCurrentWeather();
+}
+
+const hourlySubDivs = document.querySelectorAll('.hourly-div')
+const observations = document.querySelectorAll('.observation-cell')
+function Animations(){
   rightDiv.classList.remove('hidden')
   rightDiv.classList.add('visible')
   gifDiv.classList.remove('hidden')
@@ -85,7 +169,18 @@ window.storeInput = function storeInput() {
   hourlyDiv.classList.remove('hidden')
   hourlyDiv.classList.add('visible')
 
-  getCurrentWeather();
+  for (let i = 0; i < hourlySubDivs.length; i++) {
+    setTimeout(function() {
+      hourlySubDivs[i].classList.remove('hidden');
+      hourlySubDivs[i].classList.add('visible');
+    },i * 300);
+  };
+  for (let i = 0; i < observations.length; i++) {
+    setTimeout(function() {
+      observations[i].classList.remove('hidden');
+      observations[i].classList.add('visible');
+    },i * 300);
+  };
 }
 
 console.log('JS IS WORKING')
