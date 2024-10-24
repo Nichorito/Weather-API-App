@@ -56,6 +56,7 @@ body {
 #gifContainer{
     width: 100%;
     height: fit-content;
+    display: none;
 }
 
 input {
@@ -181,7 +182,7 @@ h2 {
 }
 
 #current-weather>img{
-    width: 70%;
+    width: 50%;
 }
 #current-weather>p{
     margin-top: 5%;
@@ -198,6 +199,8 @@ h2 {
     width: 40%;
     gap: 10%;
     padding-right: 5%;
+    transition: opacity 3s linear;
+
 }
 
 #conditions{
@@ -223,11 +226,28 @@ h2 {
     backdrop-filter: blur(10px);
     border-radius: 1em;
     align-items: center;
+    transition: opacity 4s linear;
 }
 
 .hourly-div{
     width: 20%;
     height: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 3%;
+    align-items: center;
+    gap: 2%;
+}
+
+.hourly-div>p{
+    width: 100%;
+    text-align: center;
+
+}
+
+.hourly-div>img{
+    width: 70%;
 }
 
 #hour2{
