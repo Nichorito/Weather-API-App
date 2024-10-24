@@ -70,7 +70,7 @@ function getWeeklyData(weatherData){
     date[i - 1].textContent = formattedDate;
     dailyTemp[i - 1].textContent = convertToCelsius(weatherData.days[i].tempmax) + "°";
     let condition = weatherData.days[i].icon;
-    dailyConditions[i - 1].src = 'https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/2nd%20Set%20-%20Color/' + condition + '.png';
+    dailyConditions[i - 1].src = './src/'+ condition +'.png';
     console.log(dailyConditions[i-1].src)
   }
 }
@@ -143,8 +143,9 @@ function convertTime(currentHour) {
 //Button click
 window.storeInput = function storeInput() {
   console.log('Storing input')
-  getCurrentWeather();
   Animations();
+
+  getCurrentWeather();
 }
 
 const hourlySubDivs = document.querySelectorAll('.hourly-div')
