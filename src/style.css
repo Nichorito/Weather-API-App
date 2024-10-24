@@ -51,14 +51,20 @@ body {
     margin-top: 2%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     width: 30vw;
 }
 
+#leftDivLower{
+    display: flex;
+    width: 30vw;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
 #gifContainer{
-    max-width: 100%;
+    width: 100%;
     height: fit-content;
-    margin-bottom: 15%;
+    display: flex;
 }
 
 input {
@@ -95,6 +101,7 @@ input::placeholder{
     align-items: start;
     width: 30vw;
     height: fit-content;
+    align-self: flex-start;
 }
 
 #searchForm{
