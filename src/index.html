@@ -8,19 +8,23 @@
     <script type="module" src="index.js" defer></script>
   </head>
   <body>
-    <div id="fade"></div>
-    <div class="search-container big-container blurred">
-      <h1>Welcome</h1>
-      <form id="searchForm">
-        <input
-          id="location-input"
-          type="text"
-          placeholder="Enter location..."
-          required
-        />
-        <button onclick="storeInput()">Search</button>
-      </div>
+    <div id="leftDiv">
+        <div id="fade"></div>
+        <div class="search-container big-container blurred">
+        <h1>Welcome</h1>
+        <form id="searchForm">
+            <input
+            id="location-input"
+            type="text"
+            placeholder="Enter location..."
+            required
+            />
+            <button onclick="storeInput()">Search</button>
+        </form>
+        </div>
+        <div id="gifContainer" class="big-container blurred hidden"><img src="#" alt="Catgif"></div>
     </div>
+
     <div id="rightDiv" class="big-container right-container blurred hidden">
       <h2 id="location" class="header">[city], [provice]</h2>
       <div class="content topcontent">
