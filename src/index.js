@@ -185,6 +185,7 @@ window.storeInput = function storeInput() {
 
 const hourlySubDivs = document.querySelectorAll('.hourly-div')
 const observations = document.querySelectorAll('.observation-cell')
+const weeklyDivs = document.querySelectorAll('.weekly-div')
 function Animations(){
   rightDiv.classList.remove('hidden')
   rightDiv.classList.add('visible')
@@ -205,6 +206,12 @@ function Animations(){
       observations[i].classList.add('visible');
     },i * 300);
   };
+  for (let i = 0; i < weeklyDivs.length; i++) {
+    setTimeout(function() {
+      weeklyDivs[i].classList.remove('hidden');
+      weeklyDivs[i].classList.add('visible');
+    },i * 300);
+  }
 }
 
 console.log('JS IS WORKING')
