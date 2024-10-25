@@ -319,6 +319,11 @@ h2 {
 #sunrise>img {
     width: 100%;
 }
+#sunrise>p{
+    width: 100%; /* Set to desired width */
+    max-width: 300px; /* Max width for the container */
+    font-size: 1vw;
+}
 #visibility>img {
     width: 80%;
     align-self: center;

@@ -6,6 +6,7 @@ const hourlyDiv = document.querySelector('#hourly');
 
 const currentTemp = document.querySelector('#current-temp');
 const conditions = document.querySelector('#conditions');
+const currentCondition = document.querySelector('#currentCondition');
 const feelsLike = document.querySelector('#feels-like')
 const highLow = document.querySelector('#high-and-low')
 const inputLocation = document.querySelector('#location-input');
@@ -19,6 +20,7 @@ async function getCurrentWeather() {
   //DISPLAY TEMPERATURE AND CONDITIONS IN MAIN CURRENT BLOCK
   currentTemp.textContent = convertToCelsius(weatherData.currentConditions.temp) + "°";
   conditions.textContent = weatherData.currentConditions.conditions;
+  currentCondition.src = 'https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/2nd%20Set%20-%20Color/' + weatherData.currentConditions.icon + '.png'
   feelsLike.textContent = "Feels like: " + convertToCelsius(weatherData.currentConditions.feelslike) + "°";
   highLow.textContent = "H: " + convertToCelsius(weatherData.days[0].feelslikemax) + " L: " + convertToCelsius(weatherData.days[0].feelslikemin);
 
@@ -28,21 +30,26 @@ async function getCurrentWeather() {
   //Get and display information for hourly div
   getHourlyData(weatherData);
 
+  getObservationData(weatherData);
+
   //Get and display weekly data 
   getWeeklyData(weatherData)
 }
 
 //Hourly Functions
-const hourlyTemp = document.querySelectorAll('.hourlyTemp');
-const hourlyTime = document.querySelectorAll('.hourlyTime');
-let timeString;
-
 function getHourlyData(weatherData) {
+  const hourlyTemp = document.querySelectorAll('.hourlyTemp');
+  const hourlyTime = document.querySelectorAll('.hourlyTime');
+  const hourlyConditions = document.querySelectorAll('.hourlyConditions');
+  let timeString;
+  
   for (let i = 1, k=0; i < 6; i++) {
     //Convert 00:00:00 format to X AM/PM and display
     let currentHour = parseInt(weatherData.currentConditions.datetime.split(":")[0])
     timeString = convertTime(currentHour + i);
     hourlyTime[i - 1].textContent = timeString
+    let condition;
+    
     console.log(currentHour + i)
 
     //Display temperature 
@@ -50,12 +57,16 @@ function getHourlyData(weatherData) {
       console.log(k)
       console.log("Clock has rolled over, it is now: " + weatherData.days[1].hours[0 + k] + "AM")
       hourlyTemp[i - 1].textContent = convertToCelsius(weatherData.days[1].hours[0 + k].temp) + "°";
+      condition = weatherData.days[1].hours[0+k].icon;
       k++;
     }
     else{
       console.log("using else for time: " + (currentHour + i))
       hourlyTemp[i - 1].textContent = convertToCelsius(weatherData.days[0].hours[currentHour + i].temp) + "°";
+      condition = weatherData.days[0].hours[currentHour + i].icon;
     }
+    console.log(condition);
+    hourlyConditions[i-1].src = 'https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/2nd%20Set%20-%20Color/' + condition + '.png';
   }
 }
 
@@ -75,8 +86,26 @@ function getWeeklyData(weatherData){
   }
 }
 
+function getObservationData(weatherData){
+  const sunrise = document.querySelector('#sunriseP');
+  const sunset = document.querySelector('#sunsetP');
+  const UV = document.querySelector('#UVP');
+  const humidity = document.querySelector('#humidityP');
+  const wind = document.querySelector('#windP');
+  const visibility = document.querySelector('#visibilityP');
+  const pressure = document.querySelector('#pressureP');
+
+  sunrise.textContent = "Sunrise: " + formatTimeHourMin(weatherData.currentConditions.sunrise);
+  sunset.textContent = "Sunset: " + formatTimeHourMin(weatherData.currentConditions.sunset);
+  UV.textContent = "UV Index: " + weatherData.currentConditions.uvindex;
+  humidity.textContent = "Humidity: " + weatherData.currentConditions.humidity + "%";
+  wind.textContent = "Wind Speed: " + weatherData.currentConditions.windspeed + " MpH";
+  visibility.textContent = "Visibility: " + weatherData.currentConditions.visibility + " Miles";
+  pressure.textContent = "Pressure: " + weatherData.currentConditions.pressure + " MBar";
+}
+
 function convertToCelsius(f) {
-  return Math.round((f - 32) * (5 / 9));
+  return Math.floor((f - 32) * (5 / 9));
 }
 
 function formatDate(date){
@@ -124,6 +153,13 @@ function formatDate(date){
   return month + " " + day
 }
 
+function formatTimeHourMin(time){
+  let timeArray = time.split(':');
+  let hour = timeArray[0];
+  let minute = timeArray[1];
+
+  return hour + ":" + minute;
+}
 //Convert time to AM or PM 
 function convertTime(currentHour) {
   let AmPm = "A.M."

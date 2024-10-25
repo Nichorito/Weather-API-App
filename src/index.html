@@ -30,7 +30,7 @@
     <div class="content topcontent">
       <div id="current-info" class="blurred">
         <div id="current-weather">
-          <img src="Sunny.png" alt="OOPs" />
+          <img id="currentCondition" src="#" alt="OOPs" />
           <p id="current-temp"></p>
         </div>
         <div id="current-stats">
@@ -41,27 +41,27 @@
       </div>
       <div id="hourly" class="hidden">
         <div id="hour1" class="hourly-div hidden">
-          <img src="./Sunny.png" alt="Sun" />
+          <img class="hourlyConditions" src="./Sunny.png" alt="Sun" />
           <p class="hourlyTemp">21</p>
           <p class="hourlyTime">Cloudy</p>
         </div>
         <div id="hour2" class="hourly-div hidden">
-          <img src="./Sunny.png" alt="Sun" />
+          <img class="hourlyConditions" src="./Sunny.png" alt="Sun" />
           <p class="hourlyTemp">21</p>
           <p class="hourlyTime">Cloudy</p>
         </div>
         <div id="hour3" class="hourly-div hidden">
-          <img src="./Sunny.png" alt="Sun" />
+          <img class="hourlyConditions" src="./Sunny.png" alt="Sun" />
           <p class="hourlyTemp">21</p>
           <p class="hourlyTime">Cloudy</p>
         </div>
         <div id="hour4" class="hourly-div hidden">
-          <img src="./Sunny.png" alt="Sun" />
+          <img class="hourlyConditions" src="./Sunny.png" alt="Sun" />
           <p class="hourlyTemp">21</p>
           <p class="hourlyTime">Cloudy</p>
         </div>
         <div id="hour5" class="hourly-div hidden">
-          <img src="./Sunny.png" alt="Sun" />
+          <img class="hourlyConditions" src="./Sunny.png" alt="Sun" />
           <p class="hourlyTemp">21</p>
           <p class="hourlyTime">Cloudy</p>
         </div>
@@ -70,28 +70,28 @@
     <div class="content observations">
       <div id="sunrise" class="observation-cell hidden">
         <img src="./Sunset.png" alt="Sunset">
-        <p>Sunrise:</p>
-        <p>Sunsset:</p>
+        <p id="sunriseP">Sunrise:</p>
+        <p id="sunsetP">Sunsset:</p>
       </div>
       <div id="UV" class="observation-cell hidden">
         <img src="./Gauge.png" alt="UV">
-        <p>UV Index:</p>
+        <p id="UVP">UV Index:</p>
       </div>
       <div id="wind" class="observation-cell hidden">
         <img src="./Wind gust.png" alt="UV">
-        <p>Wind:</p>
+        <p id="windP">Wind:</p>
       </div>
       <div id="humidity" class="observation-cell hidden">
         <img src="./RainDrop.png" alt="UV">
-        <p>Humidity:</p>
+        <p id="humidityP">Humidity:</p>
       </div>
       <div id="visibility" class="observation-cell hidden">
         <img src="./eye-256.png" alt="UV">
-        <p>Visibility:</p>
+        <p id="visibilityP">Visibility:</p>
       </div>
       <div id="pressure" class="observation-cell hidden">
         <img src="./pressure.png" alt="UV">
-        <p>Pressure:</p>
+        <p id="pressureP">Pressure:</p>
       </div>
     </div>
     <h2 id="forecast-header">7 Day Forecast</h2>
