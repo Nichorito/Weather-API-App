@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather Tracker</title>
   <link rel="stylesheet" type="text/css" href="609a232ab53e413e38d2.css" />
-  <script type="module" src="0d01ef1886e861d742c8.js" defer></script>
+  <script type="module" src="97a4f521809403f189a7.js" defer></script>
 <script defer src="main.js"></script></head>
 
 <body>
@@ -30,7 +30,7 @@
     <div class="content topcontent">
       <div id="current-info" class="blurred">
         <div id="current-weather">
-          <img src="48910892a2f5fe255bda.png" alt="OOPs" />
+          <img id="currentCondition" src="#" alt="OOPs" />
           <p id="current-temp"></p>
         </div>
         <div id="current-stats">
@@ -41,27 +41,27 @@
       </div>
       <div id="hourly" class="hidden">
         <div id="hour1" class="hourly-div hidden">
-          <img src="48910892a2f5fe255bda.png" alt="Sun" />
+          <img class="hourlyConditions" src="48910892a2f5fe255bda.png" alt="Sun" />
           <p class="hourlyTemp">21</p>
           <p class="hourlyTime">Cloudy</p>
         </div>
         <div id="hour2" class="hourly-div hidden">
-          <img src="48910892a2f5fe255bda.png" alt="Sun" />
+          <img class="hourlyConditions" src="48910892a2f5fe255bda.png" alt="Sun" />
           <p class="hourlyTemp">21</p>
           <p class="hourlyTime">Cloudy</p>
         </div>
         <div id="hour3" class="hourly-div hidden">
-          <img src="48910892a2f5fe255bda.png" alt="Sun" />
+          <img class="hourlyConditions" src="48910892a2f5fe255bda.png" alt="Sun" />
           <p class="hourlyTemp">21</p>
           <p class="hourlyTime">Cloudy</p>
         </div>
         <div id="hour4" class="hourly-div hidden">
-          <img src="48910892a2f5fe255bda.png" alt="Sun" />
+          <img class="hourlyConditions" src="48910892a2f5fe255bda.png" alt="Sun" />
           <p class="hourlyTemp">21</p>
           <p class="hourlyTime">Cloudy</p>
         </div>
         <div id="hour5" class="hourly-div hidden">
-          <img src="48910892a2f5fe255bda.png" alt="Sun" />
+          <img class="hourlyConditions" src="48910892a2f5fe255bda.png" alt="Sun" />
           <p class="hourlyTemp">21</p>
           <p class="hourlyTime">Cloudy</p>
         </div>
@@ -70,63 +70,63 @@
     <div class="content observations">
       <div id="sunrise" class="observation-cell hidden">
         <img src="20dd7820402c58d57902.png" alt="Sunset">
-        <p>Sunrise:</p>
-        <p>Sunsset:</p>
+        <p id="sunriseP">Sunrise:</p>
+        <p id="sunsetP">Sunsset:</p>
       </div>
       <div id="UV" class="observation-cell hidden">
         <img src="447f7e651d1c455df674.png" alt="UV">
-        <p>UV Index:</p>
+        <p id="UVP">UV Index:</p>
       </div>
       <div id="wind" class="observation-cell hidden">
         <img src="01f4c464b4c61d0e766a.png" alt="UV">
-        <p>Wind:</p>
+        <p id="windP">Wind:</p>
       </div>
       <div id="humidity" class="observation-cell hidden">
         <img src="f3857e9b34c8e16ad096.png" alt="UV">
-        <p>Humidity:</p>
+        <p id="humidityP">Humidity:</p>
       </div>
       <div id="visibility" class="observation-cell hidden">
         <img src="79b11ff214b0f95612af.png" alt="UV">
-        <p>Visibility:</p>
+        <p id="visibilityP">Visibility:</p>
       </div>
       <div id="pressure" class="observation-cell hidden">
         <img src="0ecdbf5367862fdaa819.png" alt="UV">
-        <p>Pressure:</p>
+        <p id="pressureP">Pressure:</p>
       </div>
     </div>
     <h2 id="forecast-header">7 Day Forecast</h2>
     <div class="content week-forecast">
-      <div id="day1" class="weekly-div">
+      <div id="day1" class="weekly-div hidden">
         <p class="date">Oct 25</p>
         <img class="dailyConditions" src="#" alt="Image">
         <p class="dailyTemp">21</p>
       </div>
-      <div id="day2" class="weekly-div">
-        <p class="date">Oct 25</p>
-        <img class="dailyConditions" src="89c8d14229f87a236fe0.png" alt="Image">
-        <p class="dailyTemp">21</p>
-      </div>
-      <div id="day3" class="weekly-div">
+      <div id="day2" class="weekly-div hidden">
         <p class="date">Oct 25</p>
         <img class="dailyConditions" src="#" alt="Image">
         <p class="dailyTemp">21</p>
       </div>
-      <div id="day4" class="weekly-div">
+      <div id="day3" class="weekly-div hidden">
         <p class="date">Oct 25</p>
         <img class="dailyConditions" src="#" alt="Image">
         <p class="dailyTemp">21</p>
       </div>
-      <div id="day5" class="weekly-div">
+      <div id="day4" class="weekly-div hidden">
         <p class="date">Oct 25</p>
         <img class="dailyConditions" src="#" alt="Image">
         <p class="dailyTemp">21</p>
       </div>
-      <div id="day6" class="weekly-div">
+      <div id="day5" class="weekly-div hidden">
         <p class="date">Oct 25</p>
         <img class="dailyConditions" src="#" alt="Image">
         <p class="dailyTemp">21</p>
       </div>
-      <div id="day7" class="weekly-div">
+      <div id="day6" class="weekly-div hidden">
+        <p class="date">Oct 25</p>
+        <img class="dailyConditions" src="#" alt="Image">
+        <p class="dailyTemp">21</p>
+      </div>
+      <div id="day7" class="weekly-div hidden">
         <p class="date">Oct 25</p>
         <img class="dailyConditions" src="#" alt="Image">
         <p class="dailyTemp">21</p>
